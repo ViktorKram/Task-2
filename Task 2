@@ -1,40 +1,40 @@
-create table Products 
+CREATE TABLE Products 
 (
 Id int primary key,
 Name text
 );
 
-insert into Products
-values 
+INSERT INTO Products
+VALUES 
 (1, 'Milk'),
 (2, 'Cream'),
 (3, 'Bread'),
 (4, 'Knife');
 
-create table Categories
+CREATE TABLE Categories
 (
 Id int primary key,
 Name text
 );
 
-insert into Categories
-values
+INSERT INTO Categories
+VALUES
 (1, 'For a breakfast'),
 (2, 'Bakery'),
 (3, 'Village store'),
 (4, 'Drinks');
 
-create table ProductCategories
+CREATE TABLE ProductCategories
 (
 ProductId int,
 CategoryId int,
-foreign key (ProductId) references Products(Id) on delete cascade,
-foreign key (CategoryId) references Categories(Id) on delete cascade,
-primary key (ProductId, CategoryId)
+FOREIGN KEY (ProductId) REFERENCES Products(Id) ON DELETE CASCADE,
+FOREIGN KEY (CategoryId) REFERENCES Categories(Id) ON DELETE CASCADE,
+PRIMARY KEY (ProductId, CategoryId)
 );
 
-insert into ProductCategories
-values 
+INSERT INTO ProductCategories
+VALUES 
 (1,1),
 (1,3),
 (1,4),
@@ -43,7 +43,7 @@ values
 (3,2),
 (3,3);
 
-select P.Name, C.Name
-from Products P
-left join ProductCategories PC on P.Id = PC.ProductId
-left join Categories C on PC.CategoryId = C.Id;
+SELECT P.Name, C.Name
+FROM Products P
+LEFT JOIN ProductCategories PC on P.Id = PC.ProductId
+LEFT JOIN Categories C on PC.CategoryId = C.Id;
