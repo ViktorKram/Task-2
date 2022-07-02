@@ -1,6 +1,6 @@
 CREATE TABLE Products 
 (
-Id int primary key,
+Id int PRIMARY KEY,
 Name text
 );
 
@@ -13,7 +13,7 @@ VALUES
 
 CREATE TABLE Categories
 (
-Id int primary key,
+Id int PRIMARY KEY,
 Name text
 );
 
