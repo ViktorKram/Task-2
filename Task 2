@@ -1,6 +1,6 @@
 CREATE TABLE Products 
 (
-Id int PRIMARY KEY,
+Id INT PRIMARY KEY,
 Name text
 );
 
@@ -13,8 +13,8 @@ VALUES
 
 CREATE TABLE Categories
 (
-Id int PRIMARY KEY,
-Name text
+Id INT PRIMARY KEY,
+Name TEXT
 );
 
 INSERT INTO Categories
@@ -26,8 +26,8 @@ VALUES
 
 CREATE TABLE ProductCategories
 (
-ProductId int,
-CategoryId int,
+ProductId INT,
+CategoryId INT,
 FOREIGN KEY (ProductId) REFERENCES Products(Id) ON DELETE CASCADE,
 FOREIGN KEY (CategoryId) REFERENCES Categories(Id) ON DELETE CASCADE,
 PRIMARY KEY (ProductId, CategoryId)
