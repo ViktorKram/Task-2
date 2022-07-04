@@ -1,6 +1,6 @@
-CREATE DATABASE MindBoxTask2
+CREATE DATABASE Task2Database
 GO
-USE MindBoxTask2
+USE Task2Database
 
 CREATE TABLE Products 
 (
