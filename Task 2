@@ -1,36 +1,39 @@
+CREATE DATABASE MindBoxTask2
+GO
+USE MindBoxTask2
+
 CREATE TABLE Products 
 (
-Id INT PRIMARY KEY,
-Name text
+Id INT IDENTITY PRIMARY KEY,
+Name NVARCHAR(30) NOT NULL
 );
 
 INSERT INTO Products
 VALUES 
-(1, 'Milk'),
-(2, 'Cream'),
-(3, 'Bread'),
-(4, 'Knife');
+('Milk'),
+('Cream'),
+('Bread'),
+('Knife');
 
 CREATE TABLE Categories
 (
-Id INT PRIMARY KEY,
-Name TEXT
+Id INT IDENTITY PRIMARY KEY,
+Name NVARCHAR(50) NOT NULL
 );
 
 INSERT INTO Categories
 VALUES
-(1, 'For a breakfast'),
-(2, 'Bakery'),
-(3, 'Village store'),
-(4, 'Drinks');
+('For a breakfast'),
+('Bakery'),
+('Village store'),
+('Drinks');
 
 CREATE TABLE ProductCategories
 (
-ProductId INT,
-CategoryId INT,
+ProductId INT PRIMARY KEY,
+CategoryId INT PRIMARY KEY,
 FOREIGN KEY (ProductId) REFERENCES Products(Id) ON DELETE CASCADE,
 FOREIGN KEY (CategoryId) REFERENCES Categories(Id) ON DELETE CASCADE,
-PRIMARY KEY (ProductId, CategoryId)
 );
 
 INSERT INTO ProductCategories
